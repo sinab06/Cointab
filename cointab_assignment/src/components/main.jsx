@@ -33,9 +33,9 @@ export const Main = () => {
 
   return (
     <div>
-      <div>
-        {items.map((e) => (
-          <>
+      <div className="container">
+        {/* {items.map((e) => ( */}
+          {/* <> */}
             <div className="boxes">
               <h2>Weight</h2>
               <input className="input_div" type="text" />
@@ -43,20 +43,24 @@ export const Main = () => {
 
             <div className="boxes">
               <h2>PinCode</h2>
-              <input className="input_div" type="text"  value={e.zoneid}/>
+              <input className="input_div" type="text"  />
             </div>
 
             <div className="boxes">
-              <h2>Transport</h2>
-              <select name="" id="">
+              <h2>Delivery Type</h2>
+              <select className="input_div" name="" id="">
                 <option value="forward">Forward</option>
                 <option value="rto">Forward & RTO</option>
               </select>
             </div>
-          </>
+
+            <div>
+              <button> Submit </button>
+              </div>
+          {/* </> */}
 
 
-        ))}
+        {/* ))} */}
 
 
 
