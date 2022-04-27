@@ -4,9 +4,9 @@ const zonecodes = require("./zoneid.json");
 const app = express();
 
 
-app.get("/:deliveryType/:pin/:weight", (req, res) => {
+app.get("/:deliveryType/:pinCode/:weight", (req, res) => {
 
-    const pin = `${req.params.pin}`;
+    const pinCode = `${req.params.pinCode}`;
     const weight = +req.params.weight;
     const deliveryType = req.params.deliveryType;
 
@@ -15,12 +15,12 @@ app.get("/:deliveryType/:pin/:weight", (req, res) => {
     } else {
 
         const zone = validatePin(pin);
-        const cost = findCost(deliveryType, zone, weight);
-        res.send({ "totalCost": cost });
+        const totalcost = findCost(deliveryType, zone, weight);
+        res.send({ "totalCost": totalcost });
     }
 })
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("listening on port ", port)
 })
